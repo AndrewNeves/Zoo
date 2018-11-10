@@ -34,7 +34,7 @@ public abstract class Animal {
 		}
 		else
 		{
-			this.isThirsty = false;
+			this.isThirsty = isThirsty;
 			this.isHungry = isHungry;
 			this.sleepWakeState = sleepWakeState;
 		}
