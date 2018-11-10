@@ -15,6 +15,10 @@ The provided requirements for this project are fairly high level and open ended.
 * The zookeeper can only affect the awake/asleep state of AirBreathers. 
 * The zookeeper can wake up sleeping AirBreathers day or night.
 
+## Design
+
+An object oriented design for the provided requirements leads to multiple inheritance. Multiple inheritance is typically dealt with in Java using interfaces. The problem with this approach is that each class that implements an interface provides its own implementation. This can lead to code duplication and makes it hard to enforce all classes that implement an interface implementing the same behavior if that is the desired functionality.
+
 ## Development Environment
 
 * Windows 10
