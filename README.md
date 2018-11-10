@@ -2,6 +2,19 @@
 
 This project is a programming test from a potential employer to gauge my Java and Object Oriented Programming skills.
 
+## Requirements
+
+The provided requirements for this project are fairly high level and open ended. While I would normally seek clarification and additional detail with requirements like these I believe it falls within the scope of the test to show that I make good assumptions when the information is not provided to me explicitly. The following assumptions will be treated as requirements:
+
+* An animal's thirsty, hungry, and awake/asleep states are independent. An animal can be hungry and/or thirsty while awake or asleep.
+* The zookeeper can only feed an animal when it is hungry and awake.
+* The zookeeper can only give an animal water when it is thirsty and awake.
+* An animal that is hungry will stay hungry until fed by the zookeeper.
+* An animal that is thirsty will stay thirsty until given water by the zookeeper.
+* An animal's awake/asleep state is independent of the day/night cycle. An animal can be either awake or asleep day or night.
+* The zookeeper can only affect the awake/asleep state of AirBreathers. 
+* The zookeeper can wake up sleeping AirBreathers day or night.
+
 ## Development Environment
 
 * Windows 10
