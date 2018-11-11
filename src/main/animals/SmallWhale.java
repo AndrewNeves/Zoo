@@ -1,5 +1,7 @@
 package main.animals;
 
+import java.util.Random;
+
 /**
  * SmallWhale class
  */
@@ -12,6 +14,13 @@ public final class SmallWhale extends Animal implements IWaterAnimal, IAirBreath
 		super(isHungry, sleepWakeState);
 	}
 
+	/**
+     * @see Animal#Animal(Random)
+	 */
+	public SmallWhale(Random rand) {
+		super(rand);
+	}
+	
 	@Override
 	public boolean putToSleep() throws UnsupportedOperationException {
 		return super.putToSleep();
