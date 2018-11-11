@@ -1,4 +1,4 @@
-package main.Animals;
+package main.animals;
 
 /**
  * This is the abstract animal base class from which all other animals are derived.
@@ -20,10 +20,10 @@ public abstract class Animal {
 	 * Animal constructor accepting all fields for initialization.
 	 * 
 	 * @param isThirsty Sets whether or not animal is thirsty. This field must be set to false for 
-     * {@link main.Animals.IWaterAnimal IWaterAnimals}.
+     * {@link main.animals.IWaterAnimal IWaterAnimals}.
      * @param isHungry Sets whether or not animal is hungry.
      * @param sleepWakeState Sets whether animal is awake or asleep.
-	 * @throws UnsupportedOperationException If attempting to initialize {@link main.Animals.IWaterAnimal IWaterAnimal} 
+	 * @throws UnsupportedOperationException If attempting to initialize {@link main.animals.IWaterAnimal IWaterAnimal} 
 	 * as thirsty.
 	 */
     public Animal(boolean isThirsty, boolean isHungry, SleepWakeState sleepWakeState) throws UnsupportedOperationException {
@@ -42,7 +42,7 @@ public abstract class Animal {
     
     /**
      * Animal constructor accepting only isHungry and sleepWakeState for initialization. isThirsty is Automatically
-     * initialized to false. This constructor is meant to be called by {@link main.Animals.IWaterAnimal IWaterAnimals}
+     * initialized to false. This constructor is meant to be called by {@link main.animals.IWaterAnimal IWaterAnimals}
      * which cannot be thirsty.
      * 
      * @param isHungry Sets whether or not animal is hungry.
@@ -99,7 +99,7 @@ public abstract class Animal {
      * animal to sleep will have no effect.
      * 
      * @return Status indicating if sleepWakeState has been updated.
-     * @throws UnsupportedOperationException If attempting to put a non-{@link main.Animals.IAirBreather IAirBreather} 
+     * @throws UnsupportedOperationException If attempting to put a non-{@link main.animals.IAirBreather IAirBreather} 
      * to sleep.
      */
     protected boolean putToSleep() throws UnsupportedOperationException
@@ -127,7 +127,7 @@ public abstract class Animal {
      * that is already awake will have no effect.
      * 
      * @return Status indicating if sleepWakeState has been updated.
-     * @throws UnsupportedOperationException If attempting to wake up a non-{@link main.Animals.IAirBreather IAirBreather}.
+     * @throws UnsupportedOperationException If attempting to wake up a non-{@link main.animals.IAirBreather IAirBreather}.
      */
     protected boolean wakeUp() throws UnsupportedOperationException
     {

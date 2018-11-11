@@ -1,4 +1,4 @@
-package main.Animals;
+package main.animals;
 
 /**
  * Water animal interface.

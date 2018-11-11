@@ -1,10 +1,10 @@
-package test.Animals;
-
-import main.Animals.Tiger;
-import main.Animals.Animal;
+package test.animals;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+
+import main.animals.Animal;
+import main.animals.Tiger;
 
 class TigerTest {
 
