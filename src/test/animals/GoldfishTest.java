@@ -1,11 +1,11 @@
-package test.Animals;
+package test.animals;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import main.Animals.Goldfish;
-import main.Animals.Animal;
+import main.animals.Animal;
+import main.animals.Goldfish;
 
 class GoldfishTest {
 
