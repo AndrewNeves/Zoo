@@ -1,5 +1,7 @@
 package main.animals;
 
+import java.util.Random;
+
 /**
  * Tiger class
  */
@@ -12,6 +14,13 @@ public final class Tiger extends Animal implements IAirBreather {
 		super(isThirsty, isHungry, sleepWakeState);
 	}
 
+	/**
+     * @see Animal#Animal(Random)
+	 */
+	public Tiger(Random rand) {
+		super(rand);
+	}
+	
 	@Override
 	public boolean putToSleep() throws UnsupportedOperationException {
 		return super.putToSleep();

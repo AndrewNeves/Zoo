@@ -1,5 +1,7 @@
 package main.animals;
 
+import java.util.Random;
+
 /**
  * This is the abstract animal base class from which all other animals are derived.
  */
@@ -8,8 +10,8 @@ public abstract class Animal {
 	/** Awake/sleeping enumeration. */
 	public static enum SleepWakeState
 	{
-		Awake,
-		Sleeping
+		Sleeping,
+		Awake
 	}
 	
 	private boolean isThirsty;
@@ -37,6 +39,31 @@ public abstract class Animal {
 			this.isThirsty = isThirsty;
 			this.isHungry = isHungry;
 			this.sleepWakeState = sleepWakeState;
+		}
+	}  
+    
+    /**
+     * Animal constructor that initializes the animal's fields based on the output from a random number generator.
+     * {@link main.animals.IWaterAnimal IWaterAnimals} are always initialized with isThirsty=false.
+     * 
+     * @param rand A random number generator
+     * @throws IllegalArgumentException If rand is null.
+     */
+    public Animal(Random rand) throws IllegalArgumentException {
+		if(rand == null) {
+			throw new IllegalArgumentException();
+		}
+		else {
+	    	if(this instanceof IWaterAnimal)
+			{
+				isThirsty = false;
+			}
+			else
+			{
+				this.isThirsty = rand.nextInt(2) == 1 ? true : false;
+			}
+			this.isHungry = rand.nextInt(2) == 1 ? true : false;
+			this.sleepWakeState = rand.nextInt(2) == 1 ? SleepWakeState.Awake : SleepWakeState.Sleeping;	
 		}
 	}  
     
@@ -148,4 +175,29 @@ public abstract class Animal {
             throw new UnsupportedOperationException("Attempted to wake up a non-IAirBreather.");
         }
     }
+    
+    /**
+     * Updates the animal's fields based on the output from a random number generator.
+     * {@link main.animals.IWaterAnimal IWaterAnimals} isThirsty always set to false.
+     * 
+     * @param rand A random number generator
+     * @throws IllegalArgumentException If rand is null.
+     */
+    public void setNewRandomConditions(Random rand) throws IllegalArgumentException {
+		if(rand == null) {
+			throw new IllegalArgumentException();
+		}
+		else {
+	    	if(this instanceof IWaterAnimal)
+			{
+				isThirsty = false;
+			}
+			else
+			{
+				isThirsty = rand.nextInt(2) == 1 ? true : false;
+			}
+			isHungry = rand.nextInt(2) == 1 ? true : false;
+			sleepWakeState = rand.nextInt(2) == 1 ? SleepWakeState.Awake : SleepWakeState.Sleeping;	
+		}
+	}
 }
