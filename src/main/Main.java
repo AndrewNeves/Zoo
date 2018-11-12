@@ -65,7 +65,7 @@ public class Main {
 			"   feed  [<animal(s)>]    Feed hungry animal(s).\n" +
 		    "   water [<animal(s)>]    Give water to thirsty animal(s).\n" +
 			"   sleep [<animal(s)>]    Put an awake air breather to sleep at night.\n" +
-		    "   wake  [<animal(s)>]    Wake up a sleeping air breather during the day.\n" +
+		    "   wake  [<animal(s)>]    Wake up a sleeping air breathers at any time.\n" +
 			"\n" +
 			"The [<animal(s)>] argument(s) can be a single animal or a space separated list of animals.\n" +
 		    "Valid animals are: Tiger, Whale, Goldfish\n" +

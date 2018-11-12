@@ -199,10 +199,6 @@ public final class Zookeeper {
 				}
 				else {
 					boolean canWakeAnimal = true;
-					if(zoo.dayOrNight() == DayOrNight.Night) {
-						System.out.println("     Cannot wake up " + animalName + " at night.");
-						canWakeAnimal = false;
-					}
 					if(animal.sleepWakeState() == Animal.SleepWakeState.Awake) {
 						System.out.println("     Cannot wake up " + animalName + " when it is already awake.");
 						canWakeAnimal = false;
