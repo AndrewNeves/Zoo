@@ -6,7 +6,7 @@ Delivering software means more than just delivering code. My intention with this
 
 ## Getting Started
 
-To run the application download the Zoo.jar file. Open a command prompt or terminal and navigate to the directory containing the Zoo.jar file. Run the command:
+To run the application download the [Zoo.jar](https://github.com/AndrewNeves/Zoo/releases) file. Open a command prompt or terminal and navigate to the directory containing the Zoo.jar file. Run the command:
 
 ```
 java -jar Zoo.jar
@@ -32,6 +32,10 @@ An object oriented design for the provided requirements leads to multiple inheri
 ## Test
 
 Unit tests are included in the test.Animals package. To run the tests in Eclipse right click on the package and select Run As > JUnit Test.
+
+## Code Documentation
+
+[Javadoc](https://github.com/AndrewNeves/Zoo/releases) code documentation is included with the release. To view the documentation download zoo\_v1.0.0\_javadoc.zip, extract the contents and open index.html.
 
 ## Development Environment
 
