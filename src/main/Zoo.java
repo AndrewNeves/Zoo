@@ -7,7 +7,11 @@ import main.animals.Animal.SleepWakeState;
 import main.environment.DayOrNight;
 import main.strings.ZooStrings;
 
-public class Zoo {
+/**
+ * Class that contains the {@link main.animals.Animal Animals} in the zoo and prints status reports
+ * about the {@link main.animals.Animal Animals} and zoo conditions.
+ */
+public final class Zoo {
 	
 	private Tiger tiger;
 	private Whale whale;
@@ -19,6 +23,12 @@ public class Zoo {
 	
 	private Random rand;
 
+	/**
+	 * Zoo constructor. Initializes all the animals using their random constructors
+	 * and sets the day/night state randomly.
+	 * 
+	 * @see main.animals.Animal#Animal(Random)
+	 */
 	public Zoo() {
 		
 		rand = new Random(); 
@@ -32,10 +42,17 @@ public class Zoo {
 		dayOrNight = rand.nextInt(2) == 1 ? DayOrNight.Day : DayOrNight.Night;
 	}
 	
+	/**  @return Day/Night status */
 	public DayOrNight dayOrNight() {
 		return dayOrNight;
 	}
 	
+	/**
+	 * Randomly generated new states for the {@link main.animals.Animal Animals}
+	 * and randomly assigns a new day/night state. 
+	 * 
+	 * @see main.animals.Animal#setNewRandomConditions(Random)
+	 */
 	public void generateNewConditions()
 	{
 		for(int i=0; i<animals.length; i++)
@@ -46,6 +63,13 @@ public class Zoo {
 		dayOrNight = rand.nextInt(2) == 1 ? DayOrNight.Day : DayOrNight.Night;
 	}
 	
+	/**
+	 * Returns the animal that corresponds with the animalName command
+	 * line argument string.
+	 * 
+	 * @param animalName An animal name command line argument string
+	 * @return The animal that matches the animalName.
+	 */
 	public Animal getAnimal(String animalName)
 	{
 		Animal animal = null;
@@ -68,35 +92,11 @@ public class Zoo {
 		return animal;
 	}
 	
-	public void printWelcomeMessage() {
-		System.out.print(
-			"\n\n" +
-			"Welcome to the zoo!\n" +
-			"\n" +
-		    "You are the zookeeper responsible for the well being of the animals in the zoo.\n" +
-			"You can take care of the animals and keep track of them through this tool.\n" +
-		    "\n" +
-		    "Commands to take care of animals:\n" +
-			"   feed  [<animal(s)>]    Feed hungry animal(s).\n" +
-		    "   water [<animal(s)>]    Give water to thirsty animal(s).\n" +
-			"   sleep [<animal(s)>]    Put an awake air breather to sleep at night.\n" +
-		    "   wake  [<animal(s)>]    Wake up a sleeping air breather during the day.\n" +
-			"\n" +
-			"The [<animal(s)>] argument(s) can be a single animal or a space separated list of animals.\n" +
-		    "Valid animals are: Tiger, Whale, Goldfish\n" +
-			"\n" +
-			"Commands to check on the animals:\n" +
-			"   report     Print an animal status report.\n" +
-			"\n" +
-			"Command to generate new conditions:\n" +
-		    "   new        Start a new shift with new randomly generated conditions.\n" +
-			"\n" +
-		    "To exit the application use command \"exit\" or \"quit\".\n" +
-			"\n" +
-		    "Here is your starting animal status report...\n"
-		);
-	}
-	
+	/**
+	 * Prints a report that says whether it is day or night and lists for each
+	 * {@link main.animals.Animal Animal} whether it is awake or sleeping, if it is 
+	 * hungry or not and if it is thirsty or not.
+	 */
 	public void printStatusReport() {
 		System.out.println("\n|--------------------------------------------------|");
 		if(dayOrNight() == DayOrNight.Day)

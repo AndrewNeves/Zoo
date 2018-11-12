@@ -1,51 +1,36 @@
 package main;
 
-import java.util.Scanner;
-
 import main.animals.Animal;
 import main.animals.IAirBreather;
 import main.animals.IWaterAnimal;
 import main.environment.DayOrNight;
 import main.strings.ZooStrings;
 
-public class Zookeeper {
+/**
+ * The Zookeeper parses input from the command line, performs 
+ * commanded actions, and provides feedback to the user.
+ */
+public final class Zookeeper {
 	
-	private static Zoo zoo;
-		
-	public static void main(String[] args) 
-	{	
-		zoo = new Zoo();
-		
-		zoo.printWelcomeMessage();
-		zoo.printStatusReport();
-
-		Scanner scanner = null;
-		String input;
-		
-		try 
-		{
-		    scanner = new Scanner(System.in);
-		    
-			do
-			{
-				System.out.print("cmd> ");
-				input = scanner.nextLine();
-				processCommand(input);				
-			}
-		    while(!input.trim().toLowerCase().equals(ZooStrings.EXIT_CMD) && 
-		    	  !input.trim().toLowerCase().equals(ZooStrings.QUIT_CMD));
-		}
-		finally 
-		{
-			System.out.print("\nGoodbye!\n");
-		    if(scanner!=null)
-		    {
-		        scanner.close();
-		    }
-		}
+	private Zoo zoo;
+	
+	/**
+	 * Zookeeper contructor.
+	 * 
+	 * @param zoo The {@link main.Zoo Zoo} with the {@link main.animals.Animal Animals} the
+	 * zookeeper is managing.
+	 */
+	public Zookeeper(Zoo zoo)
+	{
+		this.zoo = zoo;
 	}
 	
-	public static void processCommand(String input) 
+	/**
+	 * Process the command, perform any required action, and provide feedback to the user.
+	 * 
+	 * @param input The unmodified command line input.
+	 */
+	public void processCommand(String input) 
 	{
 		String[] cmd = input.trim().toLowerCase().split(" ");
 		if(cmd.length > 0) 
@@ -95,7 +80,7 @@ public class Zookeeper {
 		}
 	}
 	
-	private static void processValidatedAnimalCareCommand(String cmd, String[] args)
+	private void processValidatedAnimalCareCommand(String cmd, String[] args)
 	{
 		switch(cmd)
 		{
@@ -116,7 +101,7 @@ public class Zookeeper {
 		}
 	}
 	
-	private static void feedAnimals(String[] animalNames)
+	private void feedAnimals(String[] animalNames)
 	{
 		for(String animalName : animalNames)
 		{
@@ -141,7 +126,7 @@ public class Zookeeper {
 		}
 	}
 	
-	private static void giveWaterToAnimals(String[] animalNames)
+	private void giveWaterToAnimals(String[] animalNames)
 	{
 		for(String animalName : animalNames)
 		{
@@ -169,7 +154,7 @@ public class Zookeeper {
 		}
 	}
 	
-	private static void putAnimalsToSleep(String[] animalNames)
+	private void putAnimalsToSleep(String[] animalNames)
 	{
 		for(String animalName : animalNames)
 		{
@@ -202,7 +187,7 @@ public class Zookeeper {
 		}
 	}
 	
-	private static void wakeUpAnimals(String[] animalNames)
+	private void wakeUpAnimals(String[] animalNames)
 	{
 		for(String animalName : animalNames)
 		{
