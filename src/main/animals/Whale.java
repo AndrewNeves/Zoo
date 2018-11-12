@@ -3,21 +3,21 @@ package main.animals;
 import java.util.Random;
 
 /**
- * SmallWhale class
+ * Whale class
  */
-public final class SmallWhale extends Animal implements IWaterAnimal, IAirBreather {
+public final class Whale extends Animal implements IWaterAnimal, IAirBreather {
 
 	/**
      * @see Animal#Animal(boolean, SleepWakeState)
 	 */
-	public SmallWhale(boolean isHungry, SleepWakeState sleepWakeState) {
+	public Whale(boolean isHungry, SleepWakeState sleepWakeState) {
 		super(isHungry, sleepWakeState);
 	}
 
 	/**
      * @see Animal#Animal(Random)
 	 */
-	public SmallWhale(Random rand) {
+	public Whale(Random rand) {
 		super(rand);
 	}
 	
