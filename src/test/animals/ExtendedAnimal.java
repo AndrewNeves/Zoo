@@ -4,18 +4,18 @@ import main.animals.Animal;
 
 public class ExtendedAnimal extends Animal {
 
-	public ExtendedAnimal(boolean isThirsty, boolean isHungry, SleepWakeState sleepWakeState)
-			throws UnsupportedOperationException {
-		super(isThirsty, isHungry, sleepWakeState);
-	}
+    public ExtendedAnimal(boolean isThirsty, boolean isHungry, SleepWakeState sleepWakeState)
+            throws UnsupportedOperationException {
+        super(isThirsty, isHungry, sleepWakeState);
+    }
 
-	@Override
+    @Override
     public boolean putToSleep() {
         return super.putToSleep();
     }
-    
-	@Override
+
+    @Override
     public boolean wakeUp() {
-		return super.wakeUp();
+        return super.wakeUp();
     }
 }
